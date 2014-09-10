@@ -6,28 +6,25 @@ MAINTAINER Olaoluwa Osuntokun <laolu32@gmail.com>
 RUN go get github.com/conformal/btcd/...
 
 # Expose mainnet listening port.
-EXPOSE 8333/tcp:8333/tcp
+EXPOSE 8333:8333
 
 # Expose mainnet rpc port.
-EXPOSE 8334/tcp:8334/tcp
+EXPOSE 8334:8334
 
 # Expose mainnet wallet rpc port.
-EXPOSE 8332/tcp:8332/tcp
+EXPOSE 8332:8332
 
 # Expose testnet listening port. 
-EXPOSE 18333/tcp:18333/tcp
+EXPOSE 18333:18333
 
 # Expose testnet rpc port.
-EXPOSE 18334/tcp:18334/tcp
+EXPOSE 18334:18334
 
 # Expose testnet wallet rpc port.
-EXPOSE 18332/tcp:18332/tcp
+EXPOSE 18332:18332
 
 RUN mkdir /root/.btcd
 RUN mkdir /root/.btcctl
-
-#ADD btcd.conf    /root/.btcd/btcd.conf
-#ADD btcctl.conf  /root/.btcctl/btcctl.conf
 
 CMD []
 ENTRYPOINT ["/gopath/bin/btcd"]
