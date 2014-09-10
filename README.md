@@ -2,5 +2,5 @@
 
 ```
 $ sudo docker build Dockerfile
-$ docker run -d -v /root/.btcd/:/root/.btcd/ -v /root/.btcctl/:/root/.btcctl/ --name btcd roasbeef/btcd
+$ docker run -p 8333:8333 -d -v /root/.btcd/:/root/.btcd/ -v /root/.btcctl/:/root/.btcctl/ --name btcd roasbeef/btcd
 ```
