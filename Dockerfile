@@ -2,7 +2,7 @@ FROM google/golang
 
 MAINTAINER Olaoluwa Osuntokun <laolu32@gmail.com>
 
-# Grab and install the latest, stable version of btcd and it's dependencies.
+# Grab and install the latest version of btcd and it's dependencies.
 RUN go get github.com/conformal/btcd/...
 
 # Expose mainnet listening port.
