@@ -1,3 +1,5 @@
+# [btcd](https://github.com/conformal/btcd)-in-a-[box](https://www.docker.com/)
+
 ## Installing The Image
 * Installation instructions assume you already have ```docker``` installed. If this is not the case, then check out the [official installation docs](https://docs.docker.com/installation/) so you can get ```docker``` up and running on your machine. 
 
@@ -16,7 +18,7 @@ You should see something like:
   ```
   REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
   *snip*
-  roasbeef/btcd       latest              1b6af1fc0d75        1 second ago        651.4 MB
+  roasbeef/btcd       latest              1b6af1fcbeef        1 second ago        651.4 MB
   ```
 
 ### Building Manually
@@ -63,5 +65,5 @@ Instead, if we'd like to fire off some rpc commands to our host we can enter the
 
 Once you've installed `nsenter` and optionally, `docker-enter`, you can fire off rpc requests like so:
 ```
-docker-enter btcd /gopath/bin/btcctl getinfo
+$ docker-enter btcd /gopath/bin/btcctl getinfo
 ```
