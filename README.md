@@ -24,7 +24,7 @@ You should see something like:
 ### Building Manually
 Alternatively, if you'd like to make some additions or modifications to the ```Dockerfile```, you can build the image manually directly on your machine:
   ```
-  $ sudo docker build -t="<your_user_name>/btcd:<optional_tag>" .
+  $ sudo docker build --rm -t="<your_user_name>/btcd:<optional_tag>" .
   ```
 
 ## Starting your btcd full-node. 
