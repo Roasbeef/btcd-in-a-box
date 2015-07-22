@@ -3,7 +3,7 @@ FROM google/golang
 MAINTAINER Olaoluwa Osuntokun <laolu32@gmail.com>
 
 # Grab and install the latest version of btcd and it's dependencies.
-RUN go get github.com/conformal/btcd/...
+RUN go get github.com/btcsuite/btcd/...
 
 # Expose mainnet listening port.
 EXPOSE 8333
