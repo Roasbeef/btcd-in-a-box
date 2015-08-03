@@ -26,5 +26,10 @@ EXPOSE 18332
 RUN mkdir /root/.btcd
 RUN mkdir /root/.btcctl
 
+# Generate an automatic RPC conf.
+ADD initrpc.go /root/
+WORKDIR /root
+RUN go build -o gen-config && ./gen-config
+
 CMD []
 ENTRYPOINT ["/gopath/bin/btcd"]
