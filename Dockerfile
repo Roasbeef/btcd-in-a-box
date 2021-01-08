@@ -1,4 +1,4 @@
-FROM golang:1.14.3-alpine as builder
+FROM golang:1.15.6-alpine as builder
 
 MAINTAINER Olaoluwa Osuntokun <laolu32@gmail.com>
 
