@@ -9,7 +9,7 @@ ENV GODEBUG netdns=cgo
 # Pass a tag, branch or a commit using build-arg.  This allows a docker
 # image to be built from a specified Git state.  The default image
 # will use the Git tip of master by default.
-ARG checkout="master"
+ARG checkout="v.23.1"
 
 # Install dependencies and build the binaries.
 RUN apk add --no-cache --update alpine-sdk \
@@ -20,7 +20,6 @@ RUN go get -u golang.org/x/crypto/...
 
 # Build btcd
 RUN  git clone https://github.com/btcsuite/btcd /go/src/github.com/btcsuite/btcd \
-&&  git clone https://github.com/btcsuite/btcutil.git /go/src/github.com/btcsuite/btcutil \
 &&  cd /go/src/github.com/btcsuite/btcd \
 &&  git checkout $checkout \
 &&  GO111MODULE=on go install -v . ./cmd/...
@@ -29,7 +28,6 @@ RUN  git clone https://github.com/btcsuite/btcd /go/src/github.com/btcsuite/btcd
 ADD initrpc.go /root
 WORKDIR /root
 RUN go build -o gen-config
-
 
 # Start a new, final image.
 FROM alpine as final
